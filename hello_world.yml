@@ -8,8 +8,7 @@
     - name: holis
       debug:
         msg: "holis tio!"
-
-    - name: set a fact man
+	- name: set a fact man
       set_fact:
         foo: "bar"
         bar:
@@ -18,3 +17,4 @@
               - "c"
               - "d"
         cacheable: "{{ set_fact_cacheable | default(false) }}"
+		
