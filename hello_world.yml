@@ -1,6 +1,6 @@
 - name: Hello World Sample
   hosts: all
-  gather_facts: true
+  gather_facts: true 
   tasks:
     - name: Hello Message
       debug:
@@ -17,4 +17,59 @@
               - "c"
               - "d"
         cacheable: "{{ set_fact_cacheable | default(false) }}"
-
+    - debug:
+        msg: '{{ansible_distribution}}'
+      tags:
+        - ansible_facts
+    - debug:
+        msg: '{{ansible_machine}}'
+      tags:
+        - ansible_facts
+    - debug:
+        msg: '{{ansible_system}}'
+      tags:
+        - ansible_facts
+    - debug:
+        msg: '{{ansible_date_time.time}}'
+      tags:
+        - ansible_facts
+    - debug:
+        msg: '{{string}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{unicode_string}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{int}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{float}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{bool}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{null}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{list}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{obj}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{empty_list}}'
+      tags:
+        - custom_facts
+    - debug:
+        msg: '{{empty_obj}}'
+      tags:
+        - custom_facts
