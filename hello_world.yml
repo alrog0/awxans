@@ -8,15 +8,6 @@
     - name: holis
       debug:
         msg: "holis tio!"
-    - name: set a fact man
-      set_fact:
-        foo: "bar"
-        bar:
-          a:
-            b:
-              - "c"
-              - "d"
-        cacheable: "{{ set_fact_cacheable | default(false) }}"
     - debug:
         msg: '{{ansible_distribution}}'
       tags:
@@ -33,43 +24,4 @@
         msg: '{{ansible_date_time.time}}'
       tags:
         - ansible_facts
-    - debug:
-        msg: '{{string}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{unicode_string}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{int}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{float}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{bool}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{null}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{list}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{obj}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{empty_list}}'
-      tags:
-        - custom_facts
-    - debug:
-        msg: '{{empty_obj}}'
-      tags:
-        - custom_facts
+        
