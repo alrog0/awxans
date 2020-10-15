@@ -1,9 +1,20 @@
 - name: Hello World Sample
   hosts: all
   tasks:
+  gather_facts: true 
     - name: Hello Message
       debug:
         msg: "Hello World!"
     - name: holis
       debug:
         msg: "holis tio!"
+
+    - name: set a fact man
+      set_fact:
+        foo: "bar"
+        bar:
+          a:
+            b:
+              - "c"
+              - "d"
+        cacheable: "{{ set_fact_cacheable | default(false) }}"
